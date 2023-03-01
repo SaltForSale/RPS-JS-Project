@@ -2,6 +2,9 @@
     width:200px;
     height:200px;
 }
+.userimg:hover{
+	cursor: pointer;
+}
 hr{
     border:0px;
 }
