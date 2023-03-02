@@ -1,14 +1,16 @@
 const getUserChoice = (userInput) => {
+  userInput = userInput.toLowerCase();
   if (
-    (userChoice === "rock") |
-    (userChoice === "paper") |
-    (userChoice === "scissors")
+    userInput === "rock" ||
+    userInput === "scissors" ||
+    userInput === "paper"
   ) {
     return userInput;
   } else {
-    return "Choose either Rock, Paper, or Scissors";
+    console.log("Error, please type:rock, paper, or scissors.");
   }
 };
+
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
   switch (randomNumber) {
@@ -20,38 +22,50 @@ const getComputerChoice = () => {
       return "scissors";
   }
 };
+
 const determineWinner = (userChoice, computerChoice) => {
-  if (getUserChoice === getComputerChoice) {
-    return "draw";
+  if (userChoice === computerChoice) {
+    document.getElementById('winner').src = assets/error.png
+    return "This game is a tie!";
   }
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
-        document.getElementById('')
-      return "you lose";
+      document.getElementById('winner').src = assets/paper.png
+      return "Sorry, computer won!";
     } else {
-      return "you win";
+      document.getElementById('winner').src = assets/rock.png
+      return "Congratulations, you won!";
     }
   }
+
   if (userChoice === "paper") {
     if (computerChoice === "scissors") {
-      return "you lose";
+      document.getElementById('winner').src = assets/scissor.png
+      return "Sorry, computer won!";
     } else {
-      return "you win";
+      document.getElementById('winner').src = assets/paper.png
+      return "Congratulations, you won!";
     }
   }
+
   if (userChoice === "scissors") {
     if (computerChoice === "rock") {
-      return "you lose";
+      document.getElementById('winner').src = assets/rock.png
+      return "Sorry, computer won!";
     } else {
-      return "you win";
+      document.getElementById('winner').src = assets/scissor.png
+      return "Congratulations, you won!";
     }
   }
 };
-const playGame = (choice) => {
-    const userChoice = getUserChoice(choice);
-    const computerChoice = getComputerChoice();
-    console.log("You threw: " + userChoice);
-    console.log("The computer threw: " + computerChoice);
-  
-    console.log(determineWinner(userChoice, computerChoice));
-  };
+
+const playGame = () => {
+  const userChoice = getUserChoice("paper");
+  const computerChoice = getComputerChoice();
+  console.log("You threw: " + userChoice);
+  console.log("The computer threw: " + computerChoice);
+
+  console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
