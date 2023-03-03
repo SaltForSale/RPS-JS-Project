@@ -39,7 +39,7 @@ const determineWinner = (userChoice, computerChoice) => {
     } else {
       document.getElementById("winner").src = 'rock.png';
       document.getElementById("winner").src = 'paper.png';
-      document.getElementById("cWins").innerHTML = pWins++;
+      document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
@@ -53,7 +53,7 @@ const determineWinner = (userChoice, computerChoice) => {
     } else {
       document.getElementById("winner").src = 'paper.png';
       document.getElementById("winner").src = 'rock.png';
-      document.getElementById("cWins").innerHTML = pWins++;
+      document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
@@ -67,7 +67,7 @@ const determineWinner = (userChoice, computerChoice) => {
     } else {
       document.getElementById("winner").src = 'scissors.png';
       document.getElementById("compImg").src = 'paper.png';
-      document.getElementById("cWins").innerHTML = pWins++;
+      document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
@@ -80,5 +80,9 @@ const playGame = (choice) => {
   console.log("The computer threw: " + computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 };
+
+function runRatio = (pWins, cWins) => {
+  console.log(pWins/cWins)
+}
 
 playGame();
