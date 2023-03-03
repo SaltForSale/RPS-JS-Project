@@ -1,3 +1,6 @@
+let pWins = 0
+let cWins = 0
+
 const getUserChoice = (userChoice) => {
   if (
     (userChoice === "rock") |
@@ -31,10 +34,12 @@ const determineWinner = (userChoice, computerChoice) => {
     if (computerChoice === "paper") {
       document.getElementById("winner").src = 'paper.png';
       document.getElementById("compImg").src = 'paper.png';
+      document.getElementById("cWins").innerHTML = cWins++;
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = 'rock.png';
       document.getElementById("winner").src = 'paper.png';
+      document.getElementById("cWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
@@ -43,10 +48,12 @@ const determineWinner = (userChoice, computerChoice) => {
     if (computerChoice === "scissors") {
       document.getElementById("winner").src = 'scissors.png';
       document.getElementById("compImg").src = 'scissors.png';
+      document.getElementById("cWins").innerHTML = cWins++;
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = 'paper.png';
       document.getElementById("winner").src = 'rock.png';
+      document.getElementById("cWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
@@ -55,10 +62,12 @@ const determineWinner = (userChoice, computerChoice) => {
     if (computerChoice === "rock") {
       document.getElementById("winner").src = 'rock.png';
       document.getElementById("compImg").src = 'rock.png';
+      document.getElementById("cWins").innerHTML = cWins++;
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = 'scissors.png';
       document.getElementById("compImg").src = 'paper.png';
+      document.getElementById("cWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
   }
