@@ -20,6 +20,17 @@
         <center>
           <h1>Javascript Rock, Paper, Scissors</h1>
         </center>
+        <hr />
+        <center>
+          <h4 class="paddingX">
+            Instructions: Click either rock, paper, or scissors on the left hand
+            side to make your move. The computer will then choose a random
+            option and a winner will be decided. The winner will recieve a +1
+            added to there score and the Win / Loss Ratio will automatically
+            update.
+          </h4>
+        </center>
+        <hr />
       </div>
       <div class="row">
         <div class="col-md-5">
@@ -36,6 +47,7 @@
                 src="rock.png"
                 class="userimg img-fluid"
                 onclick="playGame('rock')"
+                id="rock"
               />
             </div>
             <div class="col">
@@ -43,6 +55,7 @@
                 src="paper.png"
                 class="userimg img-fluid"
                 onclick="playGame('paper')"
+                id="paper"
               />
             </div>
             <div class="col">
@@ -50,6 +63,7 @@
                 src="scissors.png"
                 class="userimg img-fluid"
                 onclick="playGame('scissors')"
+                id="scissors"
               />
             </div>
           </div>
