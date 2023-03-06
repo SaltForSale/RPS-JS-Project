@@ -40,19 +40,37 @@ const getComputerChoice = () => {
 
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === computerChoice) {
-    document.getElementById("winner").src = "error.png";
-    return "This game is a tie!";
+    if (userChoice === 'rock' && userChoice === computerChoice) {
+      document.getElementById("winner").src = "error.png";
+      document.getElementById("winnerTag").innerHTML = 'No Winner!';
+      document.getElementById("compImg").src = "rock.png";
+      return "This game is a tie!";
+    }
+    if (userChoice === 'paper' && userChoice === computerChoice) {
+      document.getElementById("winner").src = "error.png";
+      document.getElementById("winnerTag").innerHTML = 'No Winner!';
+      document.getElementById("compImg").src = "paper.png";
+      return "This game is a tie!";
+    }
+    if (userChoice === 'scissors' && userChoice === computerChoice) {
+      document.getElementById("winner").src = "error.png";
+      document.getElementById("winnerTag").innerHTML = 'No Winner!';
+      document.getElementById("compImg").src = "scissors.png";
+      return "This game is a tie!";
+    }
   }
   if (userChoice === "rock") {
     if (computerChoice === "paper") {
       document.getElementById("winner").src = "paper.png";
       document.getElementById("compImg").src = "paper.png";
       document.getElementById("cWins").innerHTML = cWins++;
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = "rock.png";
       document.getElementById("compImg").src = "scissors.png";
       document.getElementById("pWins").innerHTML = pWins++;
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       return "Congratulations, you won!";
     }
   }
@@ -61,11 +79,13 @@ const determineWinner = (userChoice, computerChoice) => {
     if (computerChoice === "scissors") {
       document.getElementById("winner").src = "scissors.png";
       document.getElementById("compImg").src = "scissors.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       document.getElementById("cWins").innerHTML = cWins++;
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = "paper.png";
       document.getElementById("compImg").src = "rock.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
@@ -75,11 +95,13 @@ const determineWinner = (userChoice, computerChoice) => {
     if (computerChoice === "rock") {
       document.getElementById("winner").src = "rock.png";
       document.getElementById("compImg").src = "rock.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       document.getElementById("cWins").innerHTML = cWins++;
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = "scissors.png";
       document.getElementById("compImg").src = "paper.png";
+      document.getElementById("winnerTag").innerHTML = 'Winner!';
       document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
