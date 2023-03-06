@@ -120,13 +120,4 @@ const playGame = (choice) => {
   console.log(determineWinner(userChoice, computerChoice));
 };
 //this block of code will set the values of computer and user choice
-const reset = () => {
-  let pWins = 0;
-  document.getElementById("pWins").innerHTML = 0;
-  let cWins = 0;
-  document.getElementById("cWins").innerHTML = 0;
-  let ratio = 0;
-  document.getElementById("ratio").innerHTML = 0;
-};
-//this block of code will reset the scores to 0
 playGame();
