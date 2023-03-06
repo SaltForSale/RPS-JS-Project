@@ -51,7 +51,7 @@ const determineWinner = (userChoice, computerChoice) => {
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = "rock.png";
-      document.getElementById("winner").src = "paper.png";
+      document.getElementById("compImg").src = "scissors.png";
       document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
@@ -65,7 +65,7 @@ const determineWinner = (userChoice, computerChoice) => {
       return "Sorry, computer won!";
     } else {
       document.getElementById("winner").src = "paper.png";
-      document.getElementById("winner").src = "rock.png";
+      document.getElementById("compImg").src = "rock.png";
       document.getElementById("pWins").innerHTML = pWins++;
       return "Congratulations, you won!";
     }
@@ -96,5 +96,15 @@ const playGame = (choice) => {
   console.log("The computer threw: " + computerChoice);
   console.log(determineWinner(userChoice, computerChoice));
 };
+
+const reset = () => {
+  let pWins = 0;
+  document.getElementById("pWins").innerHTML = 0;
+  let cWins = 0;
+  document.getElementById("cWins").innerHTML = 0;
+  let ratio = 0;
+  document.getElementById("ratio").innerHTML = 0;
+
+}
 
 playGame();
