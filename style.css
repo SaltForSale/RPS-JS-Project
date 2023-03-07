@@ -8,3 +8,12 @@
 hr{
     border:0px;
 }
+.paddingX{
+    width:75%;
+}
+.resetHover{
+    text-align:center;
+}
+.resetHover:hover{
+    cursor: pointer;
+}
